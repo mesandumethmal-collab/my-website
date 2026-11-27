@@ -1,0 +1,325 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ඉතිහාස ඉගෙනුම් මධ්‍යස්ථානය</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Serif+Sinhala:wght@600;800&display=swap">
+<style>
+/* Layout: full-bleed dark hero with the creator's portrait beside the title, floating tool cards that overlap the hero edge, then an about strip. */
+:root {
+  --bg: #F1F3F8;
+  --surface: #FFFFFF;
+  --fg: #141A2B;
+  --muted: #55607A;
+  --line: #DDE2EE;
+  --hero: #0D111D;
+  --hero-fg: #F3F5FA;
+  --hero-muted: #A3AEC8;
+  --sun: #F2B01E;
+  --on-sun: #2A1D00;
+  --c-book: #3846C8;
+  --c-ins: #2E6B5A;
+  --c-mcq: #B07A00;
+  --c-map: #7A6A8F;
+  --shadow: 0 10px 30px rgba(20,26,43,.10);
+  --sans: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", system-ui, sans-serif;
+  --serif: "Noto Serif Sinhala", "Iskoola Pota", "Nirmala UI", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A0D16; --surface: #151B2E; --fg: #EBEEF7; --muted: #9AA5C2; --line: #263050;
+    --hero: #070910; --shadow: 0 10px 30px rgba(0,0,0,.45);
+    --c-book: #8F9BFF; --c-ins: #7CC4AB; --c-mcq: #E8B84A; --c-map: #B7A8CF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A0D16; --surface: #151B2E; --fg: #EBEEF7; --muted: #9AA5C2; --line: #263050;
+  --hero: #070910; --shadow: 0 10px 30px rgba(0,0,0,.45);
+  --c-book: #8F9BFF; --c-ins: #7CC4AB; --c-mcq: #E8B84A; --c-map: #B7A8CF;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.75; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+.in { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(60% 80% at 85% 20%, rgba(242,176,30,.18), transparent 60%),
+    radial-gradient(50% 70% at 0% 100%, rgba(56,70,200,.28), transparent 65%),
+    var(--hero);
+  color: var(--hero-fg);
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
+  padding-block: calc(env(safe-area-inset-top, 0px) + 48px) 120px;
+}
+.hero .in { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 40px; align-items: center; }
+.pill { display: inline-flex; align-self: flex-start; padding: 4px 14px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; font-size: .85rem; color: var(--sun); font-weight: 600; letter-spacing: .04em; background: rgba(255,255,255,.05); }
+.txt { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+h1 { margin: 0; font-family: var(--serif); font-weight: 800; font-size: clamp(2.1rem, 6.4vw, 4rem); line-height: 1.28; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--sun); }
+.sub { margin: 0; max-width: 52ch; color: var(--hero-muted); font-size: 1.05rem; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.btn { display: inline-flex; align-items: center; padding: 11px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; font-size: .98rem; }
+.btn.p { background: var(--sun); color: var(--on-sun); }
+.btn.g { border: 1px solid rgba(255,255,255,.28); color: var(--hero-fg); }
+.btn:hover { filter: brightness(1.08); }
+
+.portrait { position: relative; justify-self: center; width: min(100%, 360px); }
+.portrait::before { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--sun); border-radius: 28px; opacity: .8; }
+.portrait img { position: relative; display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 28px; box-shadow: 0 24px 50px rgba(0,0,0,.5); }
+.tag { position: absolute; left: -10px; bottom: 22px; z-index: 2; background: var(--surface); color: var(--fg); padding: 10px 18px; border-radius: 14px; box-shadow: var(--shadow); line-height: 1.4; }
+.tag small { display: block; color: var(--muted); font-size: .75rem; }
+.tag b { font-size: 1rem; }
+
+.vid { margin-top: 44px; }
+.player { margin: 0 auto; max-width: 760px; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.14); background: #000; }
+.player video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+/* Cards */
+main { margin-top: -72px; position: relative; }
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr)); }
+.card {
+  --c: var(--c-book);
+  min-width: 0; display: flex; flex-direction: column; gap: 10px; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px;
+  box-shadow: var(--shadow); transition: transform .18s ease, border-color .18s ease;
+}
+a.card:hover { transform: translateY(-5px); border-color: var(--c); }
+.card.ins { --c: var(--c-ins); } .card.mcq { --c: var(--c-mcq); } .card.map, .card.civ { --c: var(--c-map); }
+.badge { align-self: flex-start; padding: 2px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); }
+.num { font-family: var(--serif); font-weight: 800; font-size: 2.8rem; line-height: 1.1; color: var(--c); font-variant-numeric: tabular-nums; }
+.card h2 { margin: 0; font-family: var(--serif); font-size: 1.15rem; line-height: 1.55; text-wrap: balance; }
+.card p { margin: 0; color: var(--muted); font-size: .92rem; }
+.go { margin-top: auto; padding-top: 8px; font-weight: 700; color: var(--c); }
+
+
+/* Join */
+.join { padding-block: 8px 40px; }
+.join h3 { margin: 0 0 6px; font-family: var(--serif); font-size: 1.5rem; line-height: 1.5; }
+.join .lead { margin: 0 0 20px; color: var(--muted); }
+.jgrid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.jc { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.jc.hl { background: linear-gradient(160deg, #1B2350, #0D111D); color: #F3F5FA; border-color: transparent; }
+.jc.hl .jl { color: #A3AEC8; }
+.jc h4 { margin: 0; font-family: var(--serif); font-size: 1.15rem; line-height: 1.5; }
+.jl { margin: 0; color: var(--muted); font-size: .92rem; }
+.rows { display: flex; flex-direction: column; margin: 4px 0 0; }
+.rows div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px dashed var(--line); font-size: .95rem; }
+.jc.hl .rows div { border-color: rgba(255,255,255,.2); }
+.rows dt { color: var(--muted); } .jc.hl .rows dt { color: #A3AEC8; }
+.rows dd { margin: 0; font-weight: 700; text-align: right; min-width: 0; overflow-wrap: anywhere; }
+.soon { color: var(--sun); }
+
+
+.lab2 { margin: 0 0 6px; font-size: .85rem; letter-spacing: .08em; color: var(--c-mcq); font-weight: 700; }
+.offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px; margin: 0 0 28px; }
+.offer { display: grid; grid-template-columns: 1fr; gap: 18px; align-content: start; min-width: 0; padding: 28px; border-radius: 22px; color: #F3F5FA;
+  background: radial-gradient(60% 120% at 100% 0%, rgba(242,176,30,.28), transparent 60%), linear-gradient(150deg, #1B2350, #0D111D); }
+.price small { display: block; color: #A3AEC8; font-size: .9rem; }
+.price strong { display: block; font-family: var(--serif); font-size: clamp(2.6rem, 9vw, 3.8rem); line-height: 1.2; color: var(--sun); font-variant-numeric: tabular-nums; }
+.perks, .incl { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.perks li, .incl li { position: relative; padding-left: 1.6em; min-width: 0; overflow-wrap: anywhere; }
+.perks li::before, .incl li::before { content: ""; position: absolute; left: 0; top: .6em; width: .8em; height: .45em; border-left: 3px solid var(--sun); border-bottom: 3px solid var(--sun); transform: rotate(-45deg) translateY(-50%); }
+.incl { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); margin-bottom: 28px; }
+.incl li::before { border-color: var(--c-ins); }
+.sh { margin: 0 0 12px; font-family: var(--serif); font-size: 1.15rem; line-height: 1.5; }
+.acc { font-variant-numeric: tabular-nums; letter-spacing: .03em; font-size: 1.1rem; }
+.rows a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.copy { align-self: flex-start; margin-top: auto; font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--c-book); background: transparent; color: var(--c-book); }
+.copy.light { border-color: rgba(255,255,255,.4); color: #F3F5FA; }
+.copy.done { background: var(--c-ins); border-color: var(--c-ins); color: #fff; }
+.offer.civic { background: radial-gradient(60% 120% at 100% 0%, rgba(183,168,207,.30), transparent 60%), linear-gradient(150deg, #2A2147, #0D111D); }
+@media (max-width: 640px) { .offer { padding: 22px; } }
+
+/* About */
+.about { padding-block: 56px 40px; }
+.about .in { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 28px; }
+.about h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 1.4rem; line-height: 1.5; }
+.about p { margin: 0; color: var(--muted); max-width: 60ch; }
+.gold { display: flex; flex-direction: column; gap: 2px; align-self: flex-start; margin: 4px 0 16px; padding: 14px 22px; border-radius: 16px; color: #3A2600;
+  background: linear-gradient(135deg, #FFF1B8 0%, #F6C945 28%, #D9972A 55%, #FBE08A 78%, #C98A1E 100%);
+  box-shadow: 0 8px 24px rgba(217,151,42,.35), inset 0 1px 0 rgba(255,255,255,.7); max-width: 100%; }
+.gold strong { font-family: var(--serif); font-size: 1.6rem; line-height: 1.3; font-weight: 800; letter-spacing: .01em; }
+.gold-k { font-size: .75rem; font-weight: 700; letter-spacing: .12em; opacity: .75; }
+.gold-u { font-size: .9rem; font-weight: 600; overflow-wrap: anywhere; }
+.facts { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.facts li { display: flex; gap: 12px; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.facts b { min-width: 5.5rem; color: var(--sun); font-variant-numeric: tabular-nums; }
+.foot { padding-block: 8px 44px; color: var(--muted); font-size: .85rem; }
+.foot .in { border-top: 1px solid var(--line); padding-top: 16px; }
+
+@media (max-width: 760px) {
+  .hero .in { grid-template-columns: 1fr; }
+  .portrait { order: -1; width: min(70%, 260px); justify-self: start; margin-left: 14px; }
+  .hero { padding-bottom: 100px; }
+}
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } a.card:hover { transform: none; } }
+</style>
+
+<header class="hero">
+  <div class="in">
+    <div class="txt">
+      <span class="pill">ඉතිහාසය · පුරවැසි · 10, 11 ශ්‍රේණි</span>
+      <h1>ඉතිහාසය, පුරවැසි <em>පහසුවෙන්</em> ඉගෙන ගන්න</h1>
+      <p class="sub">සටහන්, සෙල්ලිපි සහ බහුවරණ ප්‍රශ්න එක තැනකින්. පාඩම් කරන්න, මතකය පරීක්ෂා කරන්න, විභාගයට සූදානම් වන්න.</p>
+      <div class="cta">
+        <a class="btn p" href="mcq1200.html">ප්‍රශ්න පුහුණුව පටන් ගන්න</a>
+        <a class="btn g" href="#join">පන්තියට සම්බන්ධ වන්න</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="shehan.jpg" alt="ෂෙහාන් බණ්ඩාර" width="800" height="800">
+      <div class="tag"><small>සකස් කළේ</small><b>ෂෙහාන් බණ්ඩාර</b></div>
+    </div>
+  </div>
+  <div class="in vid">
+    <figure class="player">
+      <video id="intro" controls playsinline preload="metadata" poster="poster.jpg" src="intro.mp4"></video>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <div class="in">
+    <div class="grid">
+      <a class="card" href="book10.html">
+        <span class="badge">සාරාංශ</span>
+        <div class="num">10</div>
+        <h2>10 වසර මුළු පොතම එක දවසින්</h2>
+        <p>පාඩම් පිළිවෙලින් සාරාංශ සහ පිළිතුරු සඟවා පුහුණු වීමේ සටහන්.</p>
+        <span class="go">විවෘත කරන්න ←</span>
+      </a>
+      <a class="card mcq" href="mcq1200.html">
+        <span class="badge">පුහුණුව</span>
+        <div class="num">1200</div>
+        <h2>ඉතිහාසය බහුවරණ ප්‍රශ්න</h2>
+        <p>නිවැරදි පිළිතුරු සහ කෙටි ක්‍රම සමඟ ප්‍රශ්න 1200ක්.</p>
+        <span class="go">විවෘත කරන්න ←</span>
+      </a>
+      <a class="card ins" href="inscriptions.html">
+        <span class="badge">සටහන්</span>
+        <div class="num">37</div>
+        <h2>සෙල්ලිපි හා ඇතුලත් තොරතුරු</h2>
+        <p>සොයන්න, රජු අනුව පෙරන්න, පුහුණු මාදිලියෙන් මතකය බලන්න.</p>
+        <span class="go">විවෘත කරන්න ←</span>
+      </a>
+      <a class="card map" href="maps.html">
+        <span class="badge">කෙටි ක්‍රම</span>
+        <div class="num">46</div>
+        <h2>සිතියම් කෙටි ක්‍රම</h2>
+        <p>ගංගා, වැව්, වරාය ඇතුළු සිතියම් මතක තබා ගැනීමේ කෙටි ක්‍රම.</p>
+        <span class="go">විවෘත කරන්න ←</span>
+      </a>
+      <a class="card civ" href="#civic">
+        <span class="badge">පුරවැසි</span>
+        <div class="num">06</div>
+        <h2>පුරවැසි දින 06 සම්මන්ත්‍රණය</h2>
+        <p>11 වසර පුරවැසි දරුවන් සඳහා සම්මන්ත්‍රණය. රු. 900.</p>
+        <span class="go">විස්තර බලන්න ←</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<section class="join" id="join">
+  <div class="in">
+    <p class="lab2">නොවැම්බර් බදවා ගැනීම්</p>
+    <h3>ඉතිහාසයට, පුරවැසියට A එකක් ගන්න සුපිරිම වැඩපිළිවෙල</h3>
+    <p class="lead">11 වසර දරුවන්ට අවසාන මහා සම්මන්ත්‍රණ මාලාව ආරම්භ වේ.</p>
+
+    <div class="offers">
+      <div class="offer">
+        <div class="price"><small>ඉතිහාසය · 11 වසර · දින 12 අවසාන මහා සම්මන්ත්‍රණය</small><strong>රු. 1000</strong></div>
+        <ul class="perks">
+          <li>ප්‍රශ්න පත්‍ර පන්ති නොමිලේ</li>
+          <li>11 වසර තියරි එන දරුවන්ට 10 වසර නොමිලේ</li>
+          <li>සෑම දිනකම රෙකෝඩින් ලැබේ</li>
+          <li>පරණ රෙකෝඩින් සියල්ල නොමිලේ</li>
+        </ul>
+      </div>
+      <div class="offer civic" id="civic">
+        <div class="price"><small>පුරවැසි · 11 වසර · දින 06 සම්මන්ත්‍රණය</small><strong>රු. 900</strong></div>
+        <ul class="perks">
+          <li>ප්‍රශ්න පත්‍ර පන්ති නොමිලේ</li>
+          <li>සෑම දිනකම රෙකෝඩින් ලැබේ</li>
+          <li>පරණ රෙකෝඩින් සියල්ල නොමිලේ</li>
+          <li>රිසිට් එවන්නේ WhatsApp 072 998 5267 අංකයට</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 class="sh">මෙම පන්තියට ඇතුළත් වන්නේ</h4>
+    <ul class="incl">
+      <li>බහුවරණ 1200ක්</li>
+      <li>ඉලක්ක ලංකා හා ලෝක සිතියම්</li>
+      <li>ඉලක්ක පින්තූර</li>
+      <li>ඉලක්ක රචනා ප්‍රශ්න</li>
+      <li>11 වසර රිවිෂන් පන්තිය (සියලුම පාඩම් මුල සිට ඉගැන්වීම)</li>
+      <li>සිතියම් පන්තිය</li>
+    </ul>
+
+    <h4 class="sh">ගාස්තුව ගෙවන්න</h4>
+    <div class="jgrid">
+      <div class="jc">
+        <h4>ලංකා බැංකුව (තලාව)</h4>
+        <dl class="rows">
+          <div><dt>ගිණුම් නාමය</dt><dd>A.H. තෙන්නකෝන්</dd></div>
+          <div><dt>ගිණුම් අංකය</dt><dd class="acc" id="acc1">95804673</dd></div>
+        </dl>
+        <button class="copy" type="button" data-copy="95804673">ගිණුම් අංකය පිටපත් කරන්න</button>
+      </div>
+      <div class="jc">
+        <h4>මහජන බැංකුව (තලාව)</h4>
+        <dl class="rows">
+          <div><dt>ගිණුම් නාමය</dt><dd>A.H. තෙන්නකෝන්</dd></div>
+          <div><dt>ගිණුම් අංකය</dt><dd class="acc" id="acc2">315 2 001 6 0060263</dd></div>
+        </dl>
+        <button class="copy" type="button" data-copy="315 2 001 6 0060263">ගිණුම් අංකය පිටපත් කරන්න</button>
+      </div>
+      <div class="jc hl">
+        <h4>මුදල් බැර කර රිසිට් එවන්න</h4>
+        <dl class="rows">
+          <div><dt>11 වසර දරුවන්</dt><dd><a href="tel:0729985267">072 998 5267</a><br><a href="tel:0729985366">072 998 5366</a></dd></div>
+          <div><dt>පුරවැසි 11 දරුවන්</dt><dd><a href="https://wa.me/94729985267">WhatsApp 072 998 5267</a></dd></div>
+        </dl>
+        <button class="copy light" type="button" data-copy="0729985267">072 998 5267 පිටපත් කරන්න</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="in">
+    <div>
+      <h3>ෂෙහාන් බණ්ඩාර ගැන</h3>
+      <div class="gold" role="img" aria-label="BA History, කැලණිය විශ්වවිද්‍යාලය">
+        <span class="gold-k">උපාධිය</span>
+        <strong>BA History</strong>
+        <span class="gold-u">කැලණිය විශ්වවිද්‍යාලය · University of Kelaniya</span>
+      </div>
+      <p>ඉතිහාසය විභාගයට පහසුවෙන් සූදානම් වීමට සිසුන්ට උපකාර වන සටහන් සහ ප්‍රශ්න සම්පාදනය කරන ගුරුවරයා. මේ අඩවියේ සියලු පිටු ඔහුගේ නිර්මාණ.</p>
+    </div>
+    <ul class="facts">
+      <li><b>පිටු 4</b><span>සටහන්, සෙල්ලිපි, ප්‍රශ්න, සිතියම්</span></li>
+      <li><b>ප්‍රශ්න 1200</b><span>කෙටි ක්‍රම සහිතව</span></li>
+      <li><b>සෙල්ලිපි 37</b><span>පාඩම් 5කට අයත්</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="foot"><div class="in">දුරකථනයෙන් සහ පරිගණකයෙන් භාවිත කළ හැක. © ෂෙහාන් බණ්ඩාර</div></footer>
+<script>
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-copy]"); if (!b) return;
+  var t = b.getAttribute("data-copy"), old = b.textContent;
+  function ok() { b.classList.add("done"); b.textContent = "පිටපත් කළා"; setTimeout(function () { b.classList.remove("done"); b.textContent = old; }, 1800); }
+  function fallback() {
+    var d = b.previousElementSibling && b.previousElementSibling.querySelector(".acc");
+    if (d) { var r = document.createRange(); r.selectNodeContents(d); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  }
+  try { navigator.clipboard.writeText(t).then(ok, fallback); } catch (err) { fallback(); }
+});
+</script>
+
+
+</body></html>
